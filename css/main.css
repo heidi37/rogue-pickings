@@ -1,8 +1,16 @@
+/***** BASE STYLES *****/
+
+html {
+	font-size: 16px;
+}
+
 body {
 	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+	font-size: 1em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 20px;
 }
 
 .container{
@@ -22,51 +30,53 @@ h3 {
 	font-weight: 700;
 }
 h1 {
-	font-size: 30px;
+	font-size: 1.875em;
 }
 h2 {
-	font-size: 18px;
+	font-size: 1.125em;
 }
 h3 {
-	font-size: 12px;
+	font-size: .75em;
 }
 
 p {
-	font-size: 14px;
-	line-height: 21px;
-    padding: 0 30px;
+	font-size: .875em;
 }
 
-/*The widths are in a percentage!*/
+/***** HEADER *****/
+
 header {
 	border-bottom: 3px solid #77a466;
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: row wrap;
+	flex-basis: 100%;
 }
 
 header h1 {
 	margin: 0;
-	padding: 38px 0;
+	padding: 20px 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-flow: row wrap;
 	flex-basis: 100%;
-	background: yellow;
+	border-bottom: 3px solid #77a466;
 }
+
 header h1 span {
 	color: #77a466;
 }
 
 header nav {
-	padding: 46px 0;
+	padding: 10px 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-flow: row wrap;
 	flex-basis: 100%;
+	text-align: center;
 }
 header nav ul {
 	margin: 0;
@@ -75,8 +85,8 @@ header nav ul {
 header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 14px;
-	padding: 0 10px;
+	font-size: .875em;
+	padding: 10px;
 	display: block;
 }
 header nav ul li a{
@@ -84,24 +94,22 @@ header nav ul li a{
 	color:#77a466;
 }
 
-/*The widths are in a percentage!*/
+/***** MAIN *****/
+
 .top-section,
 .bottom-section {
-	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-basis: 100%;
+	flex-flow: row wrap;
 }
 
-.main-image {
-}
 .main-image img {
 	width: 100%;
 	border-bottom: 3px solid #77a466;
 }
 
-.main-title {
-}
 .main-title h2 {
 	text-align: left;
 	padding: 5px 0;
@@ -109,63 +117,144 @@ header nav ul li a{
 }
 .main-title p {
 	padding: 0;
-	font-size: 16px;
 	line-height: 25px;
 }
 
 .section-one,
 .section-two,
 .section-three {
-	width: 33%;
 	border-top: 1px solid #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-basis: 100%;
+	flex-flow: row wrap;
 }
 
-.section-one h3 {
-	padding: 10px 0;
-}
-
-.section-two {
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
-}
-
-.section-two h3,
+.section-one h3, .section-two h3,
 .section-three h3 {
-	padding: 10px 30px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-basis: 100%;
 }
 
 .menu {
 	list-style: none;
 	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-basis: 100%;
+	flex-flow: row wrap;
 }
 .menu li {
 	padding: 10px 0;
 	color:#77a466;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-basis: 100%;
 }
 
 .reviews {
 	color: #333;
-	font-size: 16px;
-	line-height: 21px;
+	line-height: 24px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 .address {
-	font-size: 16px;
 	line-height: 24px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-basis: 100%;
 }
 
-/*The widths are in a percentage!*/
+/***** FOOTER *****/
+
 footer {
-	border-top: 3px solid #eee;
+	border-top: 2px solid #eee;
 	margin: 0 auto;
 	text-align: center;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center;   
+	flex-basis: 100%;
 }
 footer span {
 	font-family: 'Galada', cursive;
 	text-transform: lowercase;
 	color: #77a466;
-	font-size: 14px;
+	font-size: 1.35em;
+}
+
+/***** MEDIA QUERIES *****/
+
+/***** tablet *****/
+
+@media(min-width: 768px){
+
+	.section-one, .section-two, .section-three {
+		flex-flow: row wrap;
+		flex-basis: 30%;
+		border-top: none;
+	}
+
+	.bottom-section {
+		justify-content: space-between;
+		align-items: flex-start;
+		border-top: .5px solid #eee;
+		padding: 10px;
+	}
+
+}
+
+/***** desktop *****/
+
+@media(min-width: 1024px){
+
+	header h1 {
+		justify-content: flex-start;
+		flex-basis: 33%;
+		border-bottom: none;
+	}
+
+	header nav {
+		padding: 10px 0;
+		display: flex;
+		justify-content: flex-end;
+		flex-basis: 67%;
+	}
+
+	header nav ul{
+		display: flex;
+	}
+
+	header nav ul li {
+		display: flex;
+		justify-content: flex-end;
+		padding: 10px 0 10px 20px;
+	}
+
+	.section-two {
+		border-left: .5px solid #eee;
+		border-right: .5px solid #eee;
+		padding: 0 30px;
+	}
+
+	.top-section {
+		padding: 0 0 10px 0;
+	}
+
+	.bottom-section {
+		padding: 0 0 20px 0;
+	}
+
+	.section-one h3, .section-two h3, .section-three h3 {
+		padding-top: 20px;
+	}
+	
 }
